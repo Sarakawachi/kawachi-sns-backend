@@ -9,6 +9,9 @@ Description: >
 Globals:
   Function:
     Timeout: 3
+    Environment:
+      Variables:
+        TABLE_NAME: !Ref PostsTable 
 
 Resources:
   HelloWorldFunction:
@@ -65,7 +68,23 @@ Resources:
         Authorizers:
           MyCognitoAuthorizer:
             UserPoolArn: arn:aws:cognito-idp:ap-northeast-1:471978645094:userpool/ap-northeast-1_Ep3vUQEjo
-
+  PostTable:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      PrimaryKey:
+        Name: id
+        Type: String
+      SSESpecification:
+        SSEEnabled: true
+  MyConnector:
+    Type: AWS::Serverless::Connector
+    Properties:
+      Source:
+        Id: HelloWorldFunction
+      Destination:
+        Id: PostTable
+      Permissions:
+        - Read
 Outputs:
 ・・・
   HelloWorldApi:
