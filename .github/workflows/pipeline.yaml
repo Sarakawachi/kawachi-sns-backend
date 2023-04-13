@@ -13,19 +13,19 @@ env:
   PIPELINE_USER_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   PIPELINE_USER_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   SAM_TEMPLATE: template.yaml
-  TESTING_STACK_NAME: kawachi-sns-backend
-  TESTING_PIPELINE_EXECUTION_ROLE: arn:aws:iam::471978645094:role/aws-sam-cli-managed-stage1-p-PipelineExecutionRole-QPLT9H1MA23P
-  TESTING_CLOUDFORMATION_EXECUTION_ROLE: arn:aws:iam::471978645094:role/aws-sam-cli-managed-stage-CloudFormationExecutionR-1ID2JHXQQ2QYN
-  TESTING_ARTIFACTS_BUCKET: aws-sam-cli-managed-stage1-pipeli-artifactsbucket-1f60uptd08fwv
+  TESTING_STACK_NAME: kawachi-test
+  TESTING_PIPELINE_EXECUTION_ROLE: arn:aws:iam::471978645094:role/aws-sam-cli-managed-kawachi-PipelineExecutionRole-7VB6L8ZZQVH2
+  TESTING_CLOUDFORMATION_EXECUTION_ROLE: arn:aws:iam::471978645094:role/aws-sam-cli-managed-kawac-CloudFormationExecutionR-1X42U94K0RALS
+  TESTING_ARTIFACTS_BUCKET: aws-sam-cli-managed-kawachi-1st-p-artifactsbucket-r0adcmcx8lws
   # If there are functions with "Image" PackageType in your template,
   # uncomment the line below and add "--image-repository ${TESTING_IMAGE_REPOSITORY}" to
   # testing "sam package" and "sam deploy" commands.
   # TESTING_IMAGE_REPOSITORY = '0123456789.dkr.ecr.region.amazonaws.com/repository-name'
   TESTING_REGION: ap-northeast-1
-  PROD_STACK_NAME: sns-backend-prod
-  PROD_PIPELINE_EXECUTION_ROLE: arn:aws:iam::471978645094:role/aws-sam-cli-managed-prod-pip-PipelineExecutionRole-1QLSZT4HTIRYT
-  PROD_CLOUDFORMATION_EXECUTION_ROLE: arn:aws:iam::471978645094:role/aws-sam-cli-managed-prod-CloudFormationExecutionR-O799VDFVEC0I
-  PROD_ARTIFACTS_BUCKET: aws-sam-cli-managed-prod-pipeline-artifactsbucket-1tbc92q3z76ac
+  PROD_STACK_NAME: kawachi-prod
+  PROD_PIPELINE_EXECUTION_ROLE: arn:aws:iam::471978645094:role/aws-sam-cli-managed-kawachi-PipelineExecutionRole-68Z9JYFOP5G6
+  PROD_CLOUDFORMATION_EXECUTION_ROLE: arn:aws:iam::471978645094:role/aws-sam-cli-managed-kawac-CloudFormationExecutionR-1A0FDC9WUFG6J
+  PROD_ARTIFACTS_BUCKET: aws-sam-cli-managed-kawachi-2nd-p-artifactsbucket-1wnre29y9yhmo
   # If there are functions with "Image" PackageType in your template,
   # uncomment the line below and add "--image-repository ${PROD_IMAGE_REPOSITORY}" to
   # prod "sam package" and "sam deploy" commands.
