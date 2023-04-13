@@ -86,7 +86,6 @@ Resources:
       Permissions:
         - Read
 Outputs:
-・・・
   HelloWorldApi:
     Description: "API Gateway endpoint URL for Prod stage for Hello World function"
     Value: !Sub "https://${ApiGatewayApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/"
